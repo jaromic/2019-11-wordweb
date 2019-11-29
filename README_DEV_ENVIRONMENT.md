@@ -30,7 +30,7 @@ Als IDE wird PHPStorm verwendet.
 Die VHost-Konfiguration unter `C:\xampp\apache\conf\extra\httpd-vhosts.conf` bearbeiten:
 * den folgenden VHost hinzufügen
     * dabei `MY_GIT_WORKING_COPY` durch den Pfad aus der Zwichenablage, siehe Punkt `IDE`ersetzen
-    * kontrollieren, ob der Port `8009` nicht schon anderswo in `http-vhosts.conf` konfiguriert ist (in dem Fall einen anderen wählen)
+    * kontrollieren, ob der Port `8010` nicht schon anderswo in `http-vhosts.conf` konfiguriert ist (in dem Fall einen anderen wählen)
     * Anschließend den Web-Server neu starten.
 
 ```apacheconfig
