@@ -83,7 +83,9 @@ composer install
 
 ## Copy development environment file
 
-Die Datei `.env.development` auf den Namen `.env` kopieren.
+```
+cp -v .env.development .env
+```
 
 ## App-Key generieren
 
