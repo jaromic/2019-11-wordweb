@@ -6,6 +6,7 @@ Dieses Dokument enthält exakte Anweisungen, um die Entwicklungsumgebung einheit
 
 * Composer muss installiert und im Pfad sein, sodass er von der Kommandozeile als `composer` aufgerufen werden kann.
 * Node.js muss installiert und im Pfad sein, sodass `npm` von der Kommandozeile aufgerufen werden kann. Falls nicht, von https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi  herunterladen und installieren.
+* Xampp muss installiert sein (zB unter `C:\xampp`)
 
 ## Hosts-File
 
@@ -53,6 +54,11 @@ Listen 8010
   CustomLog "logs/dev.wordweb.log" common
 </VirtualHost>
 ```
+
+## Webserver und DB starten
+
+ * Webserver und DB über Xampp-Control-Panel starten.
+ * **Falls Webserver schon läuft, diesen neu starten.**
 
 ## Datenbank
 
