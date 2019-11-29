@@ -62,7 +62,7 @@ Folgende Befehle ausführen
 
 ```mysql
 CREATE DATABASE `dev.wordweb` CHARACTER SET `utf8mb4` COLLATE `utf8mb4_general_ci`;
-CREATE USER 'wordweb'@'localhost' IDENTIFIED BY 'H%21ka/bl3-';
+CREATE USER 'wordweb'@'localhost' IDENTIFIED BY 'L%22--#bl0-';
 GRANT USAGE ON *.* TO 'wordweb'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
 GRANT ALL PRIVILEGES ON `dev.wordweb`.* TO 'wordweb'@'localhost'; 
 ```
