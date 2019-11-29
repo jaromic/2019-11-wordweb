@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="WordTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+    <TestRunner class="Tests\Feature\WordTest" file="$PROJECT_DIR$/tests/Feature/WordTest.php" method="testExample" scope="Class" />
+    <method v="2" />
+  </configuration>
+</component>
