@@ -76,7 +76,7 @@
     });
 
 </script>
-<h1>Wordweb API test</h1>
+<h1>Wordweb API test (AJAX)</h1>
 <div>
     <h2>GET</h2>
     <ul id="words" style="height:100px; width: 200px; overflow-y: scroll;">
@@ -92,5 +92,11 @@
     <p><input type="text" id="delete-id" placeholder="id"></p>
     <p><button type="button" onclick="deleteWord()">DELETE</button></p>
 </div>
+<h2>Synonym Test (non-AJAX)</h2>
+    <ul id="words" style="height:100px; width: 200px; overflow-y: scroll;">
+        @foreach(App\Word::all() as $word)
+            <li><a href="/api/words/{{ $word->id }}/synonyms" target="_blank">Synonyme für: {{ $word->name }}</a></li>
+             @endforeach
+</ul>
 </body>
 </html>
