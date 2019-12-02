@@ -19,8 +19,10 @@ class Word extends Model
     }
 
     public function setSynonym(Word $otherWord) {
-        $this->synonyms()->save($otherWord);
-        $otherWord->synonyms()->save($this);
+        if(!$this->isSynonym($otherWord)) {
+            $this->synonyms()->save($otherWord);
+            $otherWord->synonyms()->save($this);
+        }
     }
 
     public function isSynonym(Word $otherWord) : bool {
@@ -30,7 +32,7 @@ class Word extends Model
             $wordsAreEqual = false;
         }
 
-        if($this->synonyms()->where('id', $otherWord->id)->count() > 0) {
+        if($this->synonyms()->where('name', $otherWord->name)->count() > 0) {
             $isSynonymOfOther = true;
         } else {
             $isSynonymOfOther = false;
