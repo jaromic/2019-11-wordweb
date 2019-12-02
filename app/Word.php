@@ -23,5 +23,19 @@ class Word extends Model
         $otherWord->synonyms()->save($this);
     }
 
-    public function isSynonym(Word $otherWord) : bool { }
+    public function isSynonym(Word $otherWord) : bool {
+        if($this->name == $otherWord->name) {
+            $wordsAreEqual = true;
+        } else {
+            $wordsAreEqual = false;
+        }
+
+        if($this->synonyms()->where('id', $otherWord->id)->count() > 0) {
+            $isSynonymOfOther = true;
+        } else {
+            $isSynonymOfOther = false;
+        }
+
+        return $wordsAreEqual || $isSynonymOfOther;
+    }
 }
