@@ -25,7 +25,9 @@ class WordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $word = new Word();
+        $word->name = $request->name;
+        $word->save();
     }
 
     /**
@@ -36,7 +38,8 @@ class WordController extends Controller
      */
     public function show($id)
     {
-        //
+        $word = Word::findOrFail($id);
+        return response()->json($word);
     }
 
     /**
@@ -48,7 +51,9 @@ class WordController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $word = Word::findOrFail($id);
+        $word->name = $request->name;
+        $word->save();
     }
 
     /**
@@ -59,6 +64,7 @@ class WordController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $word = Word::findOrFail($id);
+        $word->delete();
     }
 }
