@@ -17,9 +17,24 @@
             url: '/api/words',
             type: 'GET',
             success: function(data) {
+                $("#words").empty();
                 for (var i=0; i < data.length; ++i) {
                     $("#words").append('<li>' + data[i].id + ': ' + data[i].name + '</li>');
                 }
+            },
+            error: ajaxError
+        });
+    }
+
+    function addWord() {
+        $.ajax({
+            url: '/api/words',
+            type: 'POST',
+            data: {
+                'name': $("#post-name").val(),
+            },
+            success: function(data) {
+                getWords();
             },
             error: ajaxError
         });
@@ -34,8 +49,10 @@
     <h2>GET</h2>
     <ul id="words" style="height: 100px; width: 200px; overflow-y: scroll;">
     </ul>
-    <h2>PUT</h2>
     <h2>POST</h2>
+    <p><input type="text" id="post-name" placeholder="name"></p>
+    <p><button type="button" onclick="addWord()">Hinzufügen</button></p>
+    <h2>PUT</h2>
     <h2>DELETE</h2>
 </main>
 </body>
