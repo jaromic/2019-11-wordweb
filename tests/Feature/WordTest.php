@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Word;
 use Tests\TestCase;
 
 class WordTest extends TestCase
@@ -57,5 +58,36 @@ class WordTest extends TestCase
             }
         }
         return $found;
+    }
+
+    public function testWordsHasSynonymsDoesNotExist()
+    {
+        $name = "Blume";
+        $this->expectException('Illuminate\Database\Eloquent\ModelNotFoundException');
+        $this->subtestHasSynonyms($name);
+    }
+
+    public function testWordsHasSynonymsYes()
+    {
+        $name = "Kasten";
+        $this->subtestHasSynonyms($name);
+    }
+
+    public function testWordsHasSynonymsNo()
+    {
+        $name = "Vase";
+        $this->subtestHasSynonyms($name);
+    }
+
+    /**
+     * @param string $name
+     */
+    private function subtestHasSynonyms(string $name): void
+    {
+        $w = Word::where('name', $name)->firstOrFail();
+        $id = $w->id;
+        $response = $this->get('/api/words/' . $id . '/synonyms');
+        $word = Word::findOrFail($id);
+        $response->assertJsonCount($word->synonyms()->count());
     }
 }

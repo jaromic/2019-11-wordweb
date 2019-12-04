@@ -9,6 +9,7 @@ class MicroWordDatabase
         ['Treppe', 'Stiege', 'Stufen'],
         ['Bank', 'Sofa', 'Couch'],
         ['Kasten', 'Schrank', 'Kästchen'],
+        ['Vase'],
     ];
 
     /**

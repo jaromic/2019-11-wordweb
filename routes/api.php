@@ -19,7 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('words', 'WordController');
-
-Route::get('words/{id}/synonyms', function($id) {
-    return response()->json(Word::findOrFail($id)->synonyms);
-});
+Route::get('words/{word}/synonyms', 'WordController@getSynonyms');
